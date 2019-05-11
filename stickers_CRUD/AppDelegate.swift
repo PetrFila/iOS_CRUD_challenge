@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // create an entry point in this case navigation controller
         // this will automatically generate the top nav bar
-        let navController = UINavigationController(rootViewController: ViewController())
+        let navController = UINavigationController(rootViewController: TableViewController())
         window?.rootViewController = navController
                 
         return true
