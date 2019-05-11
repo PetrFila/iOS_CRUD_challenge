@@ -1,5 +1,5 @@
 //
-//  NewItemViewController.swift
+//  DetailsViewController.swift
 //  stickers_CRUD
 //
 //  Created by Petr Fila on 9/5/19.
@@ -8,18 +8,23 @@
 
 import UIKit
 
-class AddNewItemViewController: UIViewController {
+class TitleViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "New"
-
+        
+        navigationItem.title = "Titel"
+        
         let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: self, action: #selector(saveData))
         
         navigationItem.rightBarButtonItem = saveButton
-        view.backgroundColor = UIColor.gray
+
+        view.backgroundColor = UIColor.blue
     }
     
     @ objc func saveData(){
         print("Data saved")
     }
+    
+    
 }
