@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    let cellIdentifier = "Cell"
+    var cellIdentifier = "Cell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section
         // return restaurantNames.count
-        return 1
+        return 10
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,6 +45,17 @@ class TableViewController: UITableViewController {
 //        cell.imageView?.image = UIImage(named: restaurantPics[indexPath.row])
         cell.backgroundColor = UIColor.brown
         return cell
+    }
+    
+    // swipe menu
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: UIContextualAction.Style.destructive, title: "Delete") {
+            (action, view, completion) in
+            // self.dataSource.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            completion(true)
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -67,5 +78,7 @@ class TableViewController: UITableViewController {
     @objc func moveToAddNewItemScreen() {
         show(AddNewItemViewController(), sender: self)
     }
+    
+    
 }
 
