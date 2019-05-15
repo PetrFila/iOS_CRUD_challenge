@@ -39,6 +39,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9137543228C429B0028860B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C91C4D2022870B0A007B6941 /* TableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C9137544228C42A90028860B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C93314F922831D6600C09848 /* TableViewController.swift */,
+				C9A5FC7D22844DF00010F03E /* TitleViewController.swift */,
+				C9A5FC7F228451C30010F03E /* NewItemViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C9137545228C42BB0028860B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		C93314EB22831D6600C09848 = {
 			isa = PBXGroup;
 			children = (
@@ -59,11 +84,10 @@
 		C93314F622831D6600C09848 /* stickers_CRUD */ = {
 			isa = PBXGroup;
 			children = (
+				C9137543228C429B0028860B /* Views */,
+				C9137544228C42A90028860B /* Controllers */,
+				C9137545228C42BB0028860B /* Services */,
 				C93314F722831D6600C09848 /* AppDelegate.swift */,
-				C93314F922831D6600C09848 /* TableViewController.swift */,
-				C91C4D2022870B0A007B6941 /* TableViewCell.swift */,
-				C9A5FC7F228451C30010F03E /* NewItemViewController.swift */,
-				C9A5FC7D22844DF00010F03E /* TitleViewController.swift */,
 				C93314FE22831D6700C09848 /* Assets.xcassets */,
 				C933150322831D6700C09848 /* Info.plist */,
 			);

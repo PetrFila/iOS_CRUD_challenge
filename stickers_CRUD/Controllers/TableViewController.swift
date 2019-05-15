@@ -16,7 +16,8 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.red
-        
+        navigationItem.title = "Stickers"
+
         navigationController?.navigationBar.isTranslucent = false
         
         let addNew = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(moveToAddNewItemScreen))
@@ -82,13 +83,18 @@ class TableViewController: UITableViewController {
     }
     
     func showActionSheet() {
+        // establish an action sheet
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
-        let cancel = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
-        let delete = UIAlertAction(title: "Delete", style: UIAlertAction.Style.destructive)
         
+        // create buttons
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+        let delete = UIAlertAction(title: "Delete", style: UIAlertAction.Style.destructive, handler: nil)
+        
+        // display the buttons in particular order
         actionSheet.addAction(delete)
         actionSheet.addAction(cancel)
         
+        // present the action sheet on display
         self.present(actionSheet, animated: true, completion: nil)
 
     }
