@@ -49,12 +49,14 @@ class TableViewController: UITableViewController {
     
     // swipe menu
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: UIContextualAction.Style.destructive, title: "Delete") {
+        let deleteAction = UIContextualAction(style: UIContextualAction.Style.destructive, title: "Delete"){
             (action, view, completion) in
-            // self.dataSource.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-            completion(true)
+            self.showActionSheet()
+
+//            self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            completion(false)
         }
+        
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
@@ -77,6 +79,18 @@ class TableViewController: UITableViewController {
   
     @objc func moveToAddNewItemScreen() {
         show(AddNewItemViewController(), sender: self)
+    }
+    
+    func showActionSheet() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+        let delete = UIAlertAction(title: "Delete", style: UIAlertAction.Style.destructive)
+        
+        actionSheet.addAction(delete)
+        actionSheet.addAction(cancel)
+        
+        self.present(actionSheet, animated: true, completion: nil)
+
     }
     
     
