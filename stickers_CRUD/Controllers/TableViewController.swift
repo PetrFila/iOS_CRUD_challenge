@@ -12,6 +12,8 @@ class TableViewController: UITableViewController {
 
     var cellIdentifier = "Cell"
     
+    var dataInDictionary = [StickerModel]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +27,34 @@ class TableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = addNew
         
         tableView.register(TableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        
+        
+        let serviceClass = APICall()
+    
+        serviceClass.fetchData { sticker, error  in
+            
+            if let error = error {
+                print("Error message from index controller: ", error)
+            }
+            
+            print(sticker!)
+            print(type(of: sticker))
+//            self.dataInDictionary = sticker ?? [:]
+//            print(self.dataInDictionary)
+//            DispatchQueue.main.async {
+            
+//                if error != nil {
+//                    self.sessionError(title: "Damn", message: error?.localizedDescription ?? "Something went wrong")
+//                }
+                
+//                SVProgressHUD.dismiss()
+//                self.tableView.isHidden = false
+//                UIApplication.shared.endIgnoringInteractionEvents()
+                
+                
+//                self.tableView.reloadData()
+//            }
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

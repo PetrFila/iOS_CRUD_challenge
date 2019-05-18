@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9137547228C46070028860B /* APICallClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9137546228C46070028860B /* APICallClass.swift */; };
+		C913754A228EF1FE0028860B /* StickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9137549228EF1FE0028860B /* StickerModel.swift */; };
 		C91C4D2122870B0A007B6941 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C4D2022870B0A007B6941 /* TableViewCell.swift */; };
 		C93314F822831D6600C09848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93314F722831D6600C09848 /* AppDelegate.swift */; };
 		C93314FA22831D6600C09848 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93314F922831D6600C09848 /* TableViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C9137546228C46070028860B /* APICallClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallClass.swift; sourceTree = "<group>"; };
+		C9137549228EF1FE0028860B /* StickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerModel.swift; sourceTree = "<group>"; };
 		C91C4D2022870B0A007B6941 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		C93314F422831D6600C09848 /* stickers_CRUD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stickers_CRUD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93314F722831D6600C09848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,8 +64,17 @@
 		C9137545228C42BB0028860B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C9137546228C46070028860B /* APICallClass.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C9137548228EF19A0028860B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9137549228EF1FE0028860B /* StickerModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C93314EB22831D6600C09848 = {
@@ -86,6 +99,7 @@
 			children = (
 				C9137543228C429B0028860B /* Views */,
 				C9137544228C42A90028860B /* Controllers */,
+				C9137548228EF19A0028860B /* Model */,
 				C9137545228C42BB0028860B /* Services */,
 				C93314F722831D6600C09848 /* AppDelegate.swift */,
 				C93314FE22831D6700C09848 /* Assets.xcassets */,
@@ -164,8 +178,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C913754A228EF1FE0028860B /* StickerModel.swift in Sources */,
 				C91C4D2122870B0A007B6941 /* TableViewCell.swift in Sources */,
 				C93314FA22831D6600C09848 /* TableViewController.swift in Sources */,
+				C9137547228C46070028860B /* APICallClass.swift in Sources */,
 				C93314F822831D6600C09848 /* AppDelegate.swift in Sources */,
 				C9A5FC80228451C30010F03E /* NewItemViewController.swift in Sources */,
 				C9A5FC7E22844DF00010F03E /* TitleViewController.swift in Sources */,
