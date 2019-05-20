@@ -9,26 +9,26 @@
 /* Begin PBXBuildFile section */
 		C9137547228C46070028860B /* APICallClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9137546228C46070028860B /* APICallClass.swift */; };
 		C913754A228EF1FE0028860B /* StickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9137549228EF1FE0028860B /* StickerModel.swift */; };
-		C91C4D2122870B0A007B6941 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91C4D2022870B0A007B6941 /* TableViewCell.swift */; };
+		C913754C2292D1B60028860B /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C913754B2292D1B60028860B /* MainTableViewCell.swift */; };
 		C93314F822831D6600C09848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93314F722831D6600C09848 /* AppDelegate.swift */; };
-		C93314FA22831D6600C09848 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93314F922831D6600C09848 /* TableViewController.swift */; };
+		C93314FA22831D6600C09848 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93314F922831D6600C09848 /* MainTableViewController.swift */; };
 		C93314FF22831D6700C09848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C93314FE22831D6700C09848 /* Assets.xcassets */; };
 		C9A5FC7C22844CBC0010F03E /* default.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A5FC7B22844CBC0010F03E /* default.xib */; };
-		C9A5FC7E22844DF00010F03E /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5FC7D22844DF00010F03E /* TitleViewController.swift */; };
+		C9A5FC7E22844DF00010F03E /* EditDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5FC7D22844DF00010F03E /* EditDetailsViewController.swift */; };
 		C9A5FC80228451C30010F03E /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5FC7F228451C30010F03E /* NewItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C9137546228C46070028860B /* APICallClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallClass.swift; sourceTree = "<group>"; };
 		C9137549228EF1FE0028860B /* StickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerModel.swift; sourceTree = "<group>"; };
-		C91C4D2022870B0A007B6941 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C913754B2292D1B60028860B /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		C93314F422831D6600C09848 /* stickers_CRUD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stickers_CRUD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93314F722831D6600C09848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C93314F922831D6600C09848 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C93314F922831D6600C09848 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		C93314FE22831D6700C09848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C933150322831D6700C09848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9A5FC7B22844CBC0010F03E /* default.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = default.xib; sourceTree = "<group>"; };
-		C9A5FC7D22844DF00010F03E /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		C9A5FC7D22844DF00010F03E /* EditDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDetailsViewController.swift; sourceTree = "<group>"; };
 		C9A5FC7F228451C30010F03E /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,7 +46,7 @@
 		C9137543228C429B0028860B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C91C4D2022870B0A007B6941 /* TableViewCell.swift */,
+				C913754B2292D1B60028860B /* MainTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -54,9 +54,9 @@
 		C9137544228C42A90028860B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C93314F922831D6600C09848 /* TableViewController.swift */,
-				C9A5FC7D22844DF00010F03E /* TitleViewController.swift */,
+				C93314F922831D6600C09848 /* MainTableViewController.swift */,
 				C9A5FC7F228451C30010F03E /* NewItemViewController.swift */,
+				C9A5FC7D22844DF00010F03E /* EditDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -179,12 +179,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C913754A228EF1FE0028860B /* StickerModel.swift in Sources */,
-				C91C4D2122870B0A007B6941 /* TableViewCell.swift in Sources */,
-				C93314FA22831D6600C09848 /* TableViewController.swift in Sources */,
+				C93314FA22831D6600C09848 /* MainTableViewController.swift in Sources */,
 				C9137547228C46070028860B /* APICallClass.swift in Sources */,
 				C93314F822831D6600C09848 /* AppDelegate.swift in Sources */,
 				C9A5FC80228451C30010F03E /* NewItemViewController.swift in Sources */,
-				C9A5FC7E22844DF00010F03E /* TitleViewController.swift in Sources */,
+				C913754C2292D1B60028860B /* MainTableViewCell.swift in Sources */,
+				C9A5FC7E22844DF00010F03E /* EditDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@ class TableViewController: UITableViewController {
 
     var cellIdentifier = "Cell"
     
-    var dataInDictionary = [StickerModel]()
+    var dataInDictionary = [String:[StickerModel]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class TableViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = addNew
         
-        tableView.register(TableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
         
         let serviceClass = APICall()
@@ -37,23 +37,22 @@ class TableViewController: UITableViewController {
                 print("Error message from index controller: ", error)
             }
             
-            print(sticker!)
-            print(type(of: sticker))
-//            self.dataInDictionary = sticker ?? [:]
-//            print(self.dataInDictionary)
-//            DispatchQueue.main.async {
+           
+            self.dataInDictionary = sticker ?? ["stickers":[]]
+            print(self.dataInDictionary["stickers"] as Any)
+            DispatchQueue.main.async {
             
 //                if error != nil {
 //                    self.sessionError(title: "Damn", message: error?.localizedDescription ?? "Something went wrong")
 //                }
                 
 //                SVProgressHUD.dismiss()
-//                self.tableView.isHidden = false
+                self.tableView.isHidden = false
 //                UIApplication.shared.endIgnoringInteractionEvents()
                 
                 
-//                self.tableView.reloadData()
-//            }
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -63,18 +62,18 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section
-        // return restaurantNames.count
-        return 10
+        return dataInDictionary["stickers"]?.count ?? 1
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? MainTableViewCell
+            else { return UITableViewCell() }
+////        let accessData = dataInDictionary["stickers"]!
+//        let dataToRow = accessData[indexPath.row]
+//        cell.title = dataToRow.title
         
-        // Configure the cell..
-//        cell.textLabel?.text = restaurantNames[indexPath.row]
-//        cell.imageView?.image = UIImage(named: restaurantPics[indexPath.row])
-        cell.backgroundColor = UIColor.brown
         return cell
     }
     
@@ -93,13 +92,12 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let titelScreen = TitleViewController()
-        // same approach as above
-        // looping through the dataArray using indexPath and assigning the data to our model on the Detail screen
-//        let modelIntheRow = dataInArray[indexPath.row]
+        let detailScreen = EditDetailsViewController()
+//        let accessData = dataInDictionary["stickers"]!
+//        let modelIntheRow = accessData[indexPath.row]
 //        titelScreen.modelToDisplay = modelIntheRow
-        
-        self.navigationController?.pushViewController(titelScreen, animated: true)
+        self.navigationController?.pushViewController(detailScreen, animated: true)
+
     }
 
     

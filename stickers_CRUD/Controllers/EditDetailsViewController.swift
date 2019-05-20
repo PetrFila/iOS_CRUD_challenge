@@ -8,12 +8,14 @@
 
 import UIKit
 
-class TitleViewController: UIViewController {
+class EditDetailsViewController: UIViewController {
     
+    var modelToDisplay: StickerModel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Title"
+        navigationItem.title = "Titel"
         
         let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: self, action: #selector(saveData))
         

@@ -8,7 +8,14 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class MainTableViewCell: UITableViewCell {
+    
+    var title: String?
+//    var description: String?
+    var rating: Int?
+    var url: URL?
+    
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: reuseIdentifier)
     }
