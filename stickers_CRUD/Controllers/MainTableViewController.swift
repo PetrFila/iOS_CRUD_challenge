@@ -29,7 +29,7 @@ class TableViewController: UITableViewController {
         tableView.register(MainTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
         
-        let serviceClass = APICall()
+        let serviceClass = APICallClass()
     
         serviceClass.fetchData { sticker, error  in
             
@@ -71,6 +71,9 @@ class TableViewController: UITableViewController {
         let accessData = dataInDictionary["stickers"]
         let dataToRow = accessData?[indexPath.row]
         cell.title = dataToRow?.title
+        cell.desc = dataToRow?.description
+        cell.rating = dataToRow?.rating
+        cell.urlString = dataToRow?.url
         
         return cell
     }
@@ -78,14 +81,16 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let detailScreen = EditDetailsViewController()
-//        let accessData = dataInDictionary["stickers"]!
-//        let modelIntheRow = accessData[indexPath.row]
-//        titelScreen.modelToDisplay = modelIntheRow
+        
+        let accessData = dataInDictionary["stickers"]
+        let dataToRow = accessData?[indexPath.row]
+        
+        detailScreen.modelToDisplay = dataToRow
         self.navigationController?.pushViewController(detailScreen, animated: true)
 
     }
     
-    // MARK swipe menu
+    // MARK:- Swipe menu
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: UIContextualAction.Style.destructive, title: "Delete"){
             (action, view, completion) in

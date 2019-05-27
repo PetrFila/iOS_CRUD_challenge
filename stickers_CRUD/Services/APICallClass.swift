@@ -8,7 +8,7 @@
 
 import UIKit
 
-class APICall {
+class APICallClass {
     
     let session = URLSession.init(configuration: URLSessionConfiguration.default)
     let url = URL(string: "https://gentle-forest-97962.herokuapp.com/")
@@ -46,6 +46,7 @@ class APICall {
             }.resume()
     }
 }
+
 
 
 
