@@ -29,7 +29,7 @@ class TableViewController: UITableViewController {
         tableView.register(MainTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
         
-        let serviceClass = APICall()
+        let serviceClass = APICallClass()
     
         serviceClass.fetchData { sticker, error  in
             
@@ -56,9 +56,6 @@ class TableViewController: UITableViewController {
         }
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section
@@ -70,44 +67,40 @@ class TableViewController: UITableViewController {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? MainTableViewCell
             else { return UITableViewCell() }
-////        let accessData = dataInDictionary["stickers"]!
-//        let dataToRow = accessData[indexPath.row]
-//        cell.title = dataToRow.title
+
+        let accessData = dataInDictionary["stickers"]
+        let dataToRow = accessData?[indexPath.row]
+        cell.title = dataToRow?.title
+        cell.desc = dataToRow?.description
+        cell.rating = dataToRow?.rating
+        cell.urlString = dataToRow?.url
         
         return cell
-    }
-    
-    // swipe menu
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: UIContextualAction.Style.destructive, title: "Delete"){
-            (action, view, completion) in
-            self.showActionSheet()
-
-//            self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-            completion(false)
-        }
-        
-        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let detailScreen = EditDetailsViewController()
-//        let accessData = dataInDictionary["stickers"]!
-//        let modelIntheRow = accessData[indexPath.row]
-//        titelScreen.modelToDisplay = modelIntheRow
+        
+        let accessData = dataInDictionary["stickers"]
+        let dataToRow = accessData?[indexPath.row]
+        
+        detailScreen.modelToDisplay = dataToRow
         self.navigationController?.pushViewController(detailScreen, animated: true)
 
     }
-
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
-  
-    @objc func moveToAddNewItemScreen() {
-        show(AddNewItemViewController(), sender: self)
+    // MARK:- Swipe menu
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: UIContextualAction.Style.destructive, title: "Delete"){
+            (action, view, completion) in
+            self.showActionSheet()
+            
+            //            self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            completion(false)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     func showActionSheet() {
@@ -124,9 +117,17 @@ class TableViewController: UITableViewController {
         
         // present the action sheet on display
         self.present(actionSheet, animated: true, completion: nil)
-
+        
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    @objc func moveToAddNewItemScreen() {
+        show(AddNewItemViewController(), sender: self)
+    }
     
 }
 
+//EABC..BAB...GG....DEF...EDE....CB......low A....

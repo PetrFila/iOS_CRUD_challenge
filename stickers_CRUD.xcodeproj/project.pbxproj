@@ -16,6 +16,8 @@
 		C9A5FC7C22844CBC0010F03E /* default.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9A5FC7B22844CBC0010F03E /* default.xib */; };
 		C9A5FC7E22844DF00010F03E /* EditDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5FC7D22844DF00010F03E /* EditDetailsViewController.swift */; };
 		C9A5FC80228451C30010F03E /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5FC7F228451C30010F03E /* NewItemViewController.swift */; };
+		C9B2365A229557A60044D9E3 /* AutoresizingConstrainsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B23659229557A60044D9E3 /* AutoresizingConstrainsExtension.swift */; };
+		C9B2365C22993C130044D9E3 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2365B22993C130044D9E3 /* CachedImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		C9A5FC7B22844CBC0010F03E /* default.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = default.xib; sourceTree = "<group>"; };
 		C9A5FC7D22844DF00010F03E /* EditDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDetailsViewController.swift; sourceTree = "<group>"; };
 		C9A5FC7F228451C30010F03E /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
+		C9B23659229557A60044D9E3 /* AutoresizingConstrainsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoresizingConstrainsExtension.swift; sourceTree = "<group>"; };
+		C9B2365B22993C130044D9E3 /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				C9137546228C46070028860B /* APICallClass.swift */,
+				C9B2365B22993C130044D9E3 /* CachedImageView.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 			children = (
 				C9137543228C429B0028860B /* Views */,
 				C9137544228C42A90028860B /* Controllers */,
+				C9B23658229557630044D9E3 /* Extension */,
 				C9137548228EF19A0028860B /* Model */,
 				C9137545228C42BB0028860B /* Services */,
 				C93314F722831D6600C09848 /* AppDelegate.swift */,
@@ -106,6 +112,14 @@
 				C933150322831D6700C09848 /* Info.plist */,
 			);
 			path = stickers_CRUD;
+			sourceTree = "<group>";
+		};
+		C9B23658229557630044D9E3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C9B23659229557A60044D9E3 /* AutoresizingConstrainsExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +197,8 @@
 				C9137547228C46070028860B /* APICallClass.swift in Sources */,
 				C93314F822831D6600C09848 /* AppDelegate.swift in Sources */,
 				C9A5FC80228451C30010F03E /* NewItemViewController.swift in Sources */,
+				C9B2365C22993C130044D9E3 /* CachedImageView.swift in Sources */,
+				C9B2365A229557A60044D9E3 /* AutoresizingConstrainsExtension.swift in Sources */,
 				C913754C2292D1B60028860B /* MainTableViewCell.swift in Sources */,
 				C9A5FC7E22844DF00010F03E /* EditDetailsViewController.swift in Sources */,
 			);

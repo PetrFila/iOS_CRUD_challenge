@@ -14,7 +14,7 @@ struct StickerModel: Decodable {
     var title: String?
     var description: String?
     var rating: Int?
-    var url: URL?
+    var url: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
