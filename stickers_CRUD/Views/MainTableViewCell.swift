@@ -15,7 +15,6 @@ class MainTableViewCell: UITableViewCell {
     var rating: Int?
     var urlString: String?
     var navArrowImage = UIImage(named: "icons8-back-96")
-    var getImage = CachedImageView()
     
     lazy var titleName: UILabel = {
         var text = UILabel()
@@ -132,16 +131,3 @@ class MainTableViewCell: UITableViewCell {
     
 }
 
-//extension UIImageView {
-//    func setImage(from url: String, withPlaceholder placeholder: UIImage? = nil) {
-//        self.image = placeholder
-//        URLSession.shared.dataTask(with: url) { (data, _, _)
-//            if let data = data {
-//                let image = UIImage(data: data)
-//                DispatchQueue.main.async {
-//                    self.image = image
-//                }
-//            }
-//            }.resume()
-//    }
-//}
