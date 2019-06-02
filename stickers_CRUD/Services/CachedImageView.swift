@@ -9,7 +9,7 @@
 import UIKit
 
 class CachedImageView: UIImageView {
-    
+    // creating Cache onject with key as the URL link as string and the image itself
     let imageCache = NSCache<NSString, UIImage>()
     var emptyImage = UIImage()
     var shouldUseEmptyImage = true
