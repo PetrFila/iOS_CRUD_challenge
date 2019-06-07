@@ -8,16 +8,14 @@
 
 import UIKit
 
-struct StickerModel: Decodable {
+struct StickerModel: Codable {
 
-    var id: Int
     var title: String?
     var description: String?
     var rating: Int?
     var url: String?
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
         case title = "title"
         case description = "description"
         case rating = "rating"

@@ -78,7 +78,6 @@ class MainTableViewCell: UITableViewCell {
         
         if let unwrapURLString = urlString {
             let urlToPass = unwrapURLString
-            print(urlToPass)
             urlImageView.loadImage(urlString: urlToPass)
         }
     }
