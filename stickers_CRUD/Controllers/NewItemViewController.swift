@@ -109,6 +109,45 @@ class AddNewItemViewController: UIViewController {
     }
     
     @ objc func saveData(){
-        print("Data saved")
+        
+        
+
+        guard let title = titleNameInput.text else {
+            print("No title. This field is required")
+            return
+        }
+        
+        guard let description = descripInput.text else {
+            print("No description. This field is required")
+            return
+        }
+        
+        guard let rating = Int(ratingNumberInput.text!) else {
+            print("No rating. This field is required")
+            return
+        }
+        
+        guard let url = urlImageViewInput.text else {
+            print("No link. This field is required")
+            return
+        }
+        
+        let modelWithData = StickerModel(title: title, description: description, rating: rating, url: url)
+
+     
+        
+        
+        
+        let apiCall = APICallClass()
+        apiCall.saveData(modelWithData) { (modelWithData, Error) in
+            print("Data saved")
+        }
+        
+        
+        
+        
+        
+
     }
 }
+
